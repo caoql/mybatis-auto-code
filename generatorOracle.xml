@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">  
+<generatorConfiguration>  
+	<!-- 1.配置数据库驱动 oracle -->  
+	<classPathEntry  location="ojdbc6-11.2.0.jar"/> 	
+    <context id="DB2Tables"  targetRuntime="MyBatis3">  
+        <commentGenerator>  
+            <property name="suppressDate" value="true"/>  
+            <!-- 2.是否去除自动生成的注释-true是;false:否 -->  
+            <property name="suppressAllComments" value="true"/>  
+        </commentGenerator>  
+        <!-- 3.数据库链接URL，用户名、密码 -->  
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.1.222:1521:orcl" userId="tms_user_test" password="tms_user_test1" >
+        </jdbcConnection>  
+        <javaTypeResolver>  
+            <property name="forceBigDecimals" value="false"/>  
+        </javaTypeResolver>  
+        <!-- 4.生成模型的包名和位置-->  
+        <javaModelGenerator targetPackage="com.yuanfu.tms.settle.entity.po" targetProject="src">  
+            <property name="enableSubPackages" value="true"/>  
+            <property name="trimStrings" value="true"/>  
+        </javaModelGenerator>  
+        <!-- 5.生成映射文件的包名和位置-->  
+        <sqlMapGenerator targetPackage="com.yuanfu.tms.settle.mapper" targetProject="src">  
+            <property name="enableSubPackages" value="true"/>  
+        </sqlMapGenerator>  
+        <!-- 6.生成DAO的包名和位置-->  
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.yuanfu.tms.settle.dao" targetProject="src">  
+            <property name="enableSubPackages" value="true"/>  
+        </javaClientGenerator>  
+        <!-- 8.要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->  
+        <table tableName="TMS_TRANS_TRANSPORT_PAY_item" domainObjectName="PayItem" enableCountByExample="ture" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+    </context>  
+</generatorConfiguration>  
