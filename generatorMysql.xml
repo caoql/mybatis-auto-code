@@ -15,36 +15,28 @@
             <property name="suppressDate" value="true"/><!--是否生成注释代时间戳-->
 		</commentGenerator>
 		<!-- 数据库链接URL、用户名、密码 -->
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/base" userId="root" password="root">
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/dataserver" userId="root" password="root">
 		</jdbcConnection>
         <!--类型转换-->
 		<javaTypeResolver>
             <!--是否使用bigDecimal，false可自动转化以下类型（Long,Integer,Short,etc.）-->
-            <propertyname="forceBigDecimals"value="false"/>
+            <property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 		<!-- 生成模型的包名和位置 -->
-		<javaModelGenerator targetPackage="com.cal.base.system.entity.po" targetProject="E:\Mybatis-auto-code\src">
+		<javaModelGenerator targetPackage="com.gaode.xtd.admin.domain.po" targetProject="E:\Mybatis-auto-code\src">
 			<property name="enableSubPackages" value="true" />
             <!--是否针对string类型的字段在set的时候进行trim调用-->
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 		<!-- 生成的映射文件包名和位置 -->
-		<sqlMapGenerator targetPackage="com.cal.base.system.mapper" targetProject="E:\Mybatis-auto-code\src">
+		<sqlMapGenerator targetPackage="com.gaode.xtd.admin.mapper" targetProject="E:\Mybatis-auto-code\src">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 		<!-- 生成DAO的包名和位置 -->
-		<javaClientGenerator type="XMLMAPPER" targetPackage="com.cal.base.system.dao" targetProject="E:\Mybatis-auto-code\src">
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.gaode.xtd.admin.mapper" targetProject="E:\Mybatis-auto-code\src">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 		<!-- 要生成那些表(更改tableName和domainObjectName就可以) -->
-		<table tableName="SYSTEM_ORGANIZATION" domainObjectName="Organization" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
-        <table tableName="SYSTEM_RESOURCE" domainObjectName="Resource" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
-        <table tableName="SYSTEM_ROLE" domainObjectName="Role" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
-        <table tableName="SYSTEM_ROLE_RESOURCE" domainObjectName="RoleResource" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
-        <table tableName="SYSTEM_USER" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
-        <table tableName="SYSTEM_USER_DATA_AUTH" domainObjectName="UserDataAuth" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
-        <table tableName="SYSTEM_USER_ORGANIZATION" domainObjectName="UserOrganization" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
-        <table tableName="SYSTEM_USER_ROLE" domainObjectName="UserRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
-        <table tableName="SYSTEM_DATA_CODE" domainObjectName="DataCode" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="datasourceconfig" domainObjectName="Datasourceconfig" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
 	</context>
 </generatorConfiguration>
